@@ -21,4 +21,27 @@ contract OwnershipProofTypes {
   bytes32 constant CONTRACT_OWNERSHIP_PROOF_TYPEHASH = keccak256(
     "ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)"
   );
+
+  function hash(OwnershipProof memory claim) internal pure returns (bytes32) {
+    return keccak256(
+      abi.encode(
+        OWNERSHIP_PROOF_TYPEHASH,
+        claim.subject,
+        claim.validFrom,
+        claim.validTo
+      )
+    );
+  }
+
+  function hash(ContractOwnershipProof memory claim) internal pure returns (bytes32) {
+    return keccak256(
+      abi.encode(
+        CONTRACT_OWNERSHIP_PROOF_TYPEHASH,
+        claim.issuer,
+        claim.subject,
+        claim.validFrom,
+        claim.validTo
+      )
+    );
+  }
 }

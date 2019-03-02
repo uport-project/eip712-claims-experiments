@@ -25,4 +25,31 @@ contract IdentityClaimTypes {
   bytes32 constant VERIFIED_RESIDENT_TYPEHASH = keccak256(
     "VerifiedResident(address issuer, address subject, bytes2 country, uint8 loa, uint256 validFrom, uint256 validTo)"
   );
+
+  function hash(VerifiedIdentity memory claim) internal pure returns (bytes32) {
+    return keccak256(
+      abi.encode(
+        VERIFIED_IDENTITY_TYPEHASH,
+        claim.issuer,
+        claim.subject,
+        claim.loa,
+        claim.validFrom,
+        claim.validTo
+      )
+    );
+  }
+
+  function hash(VerifiedResident memory claim) internal pure returns (bytes32) {
+    return keccak256(
+      abi.encode(
+        VERIFIED_RESIDENT_TYPEHASH,
+        claim.issuer,
+        claim.subject,
+        claim.country,
+        claim.loa,
+        claim.validFrom,
+        claim.validTo
+      )
+    );
+  }
 }
