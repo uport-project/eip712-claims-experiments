@@ -5,7 +5,15 @@ import "./claimTypes/OwnershipProofTypes.sol";
 
 contract OwnershipProofVerifier is AbstractClaimsVerifier, OwnershipProofTypes {
 
-  constructor (address _registryAddress) AbstractClaimsVerifier("EIP712IdentityClaims", "1", 1, address(this), _registryAddress) public {}
+  constructor (address _registryAddress, address _revocations) 
+  AbstractClaimsVerifier(
+    "EIP712IdentityClaims",
+    "1",
+    1,
+    address(this),
+    _registryAddress,
+    _revocations
+  ) public {}
 
   function hash(OwnershipProof memory claim) internal pure returns (bytes32) {
     return keccak256(
@@ -39,7 +47,9 @@ contract OwnershipProofVerifier is AbstractClaimsVerifier, OwnershipProofTypes {
       )
     );
     require(valid(claim.validFrom, claim.validTo), "invalid issuance timestamps");
-    return ecrecover(digest, v, r, s);
+    address issuer = ecrecover(digest, v, r, s);
+    require(!revocations.revoked(issuer, digest), "claim was revoked");
+    return issuer;
   }
 
 

@@ -5,7 +5,15 @@ import "./claimTypes/DomainDelegateTypes.sol";
 
 contract DomainDelegateVerifier is AbstractClaimsVerifier, DomainDelegateTypes {
 
-  constructor (address _registryAddress) AbstractClaimsVerifier("EIP712DomainDelegate", "1", 1, address(this), _registryAddress) public {}
+  constructor (address _registryAddress, address _revocations) 
+  AbstractClaimsVerifier(
+    "EIP712DomainDelegate",
+    "1",
+    1,
+    address(this),
+    _registryAddress,
+    _revocations
+  ) public {}
 
   function hash(DomainDelegate memory delegate) public pure returns (bytes32) {
     return keccak256(

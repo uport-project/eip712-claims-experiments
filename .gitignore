@@ -2,3 +2,4 @@ node_modules
 seed
 coverage.json
 *.log
+build

@@ -1,11 +1,19 @@
-pragma solidity >=0.5.3 <0.6.0;
+pragma solidity >=0.5.4 <0.6.0;
 pragma experimental ABIEncoderV2;
 import "./AbstractClaimsVerifier.sol";
 import "./claimTypes/IdentityClaimTypes.sol";
 
 contract IdentityClaimsVerifier is AbstractClaimsVerifier, IdentityClaimTypes {
 
-  constructor (address _registryAddress) AbstractClaimsVerifier("EIP712IdentityClaims", "1", 1, address(this), _registryAddress) public {}
+  constructor (address _registryAddress, address _revocations) 
+  AbstractClaimsVerifier(
+    "EIP712IdentityClaims",
+    "1",
+    1,
+    address(this),
+    _registryAddress,
+    _revocations
+  ) public {}
 
   function hash(VerifiedIdentity memory claim) internal pure returns (bytes32) {
     return keccak256(

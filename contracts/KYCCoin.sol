@@ -9,6 +9,7 @@ contract KYCCoin is IdentityClaimTypes, OwnershipProofTypes {
   address owner;
   IdentityClaimsVerifier idVerifier;
   OwnershipProofVerifier ownershipVerifier;
+
   mapping (address => uint) balances;
   mapping (address => uint) verifiers;
   mapping (address => uint) whitelist;
@@ -34,11 +35,11 @@ contract KYCCoin is IdentityClaimTypes, OwnershipProofTypes {
     idVerifier = IdentityClaimsVerifier(_idVerifier);
     ownershipVerifier = OwnershipProofVerifier(_ownershipVerifier);
     balances[msg.sender] = 10000;
-    whitelist[msg.sender] = block.timestamp;
+    whitelist[msg.sender] = block.number;
   }
 
   function authorizeVerifier(address verifier) external onlyOwner {
-    verifiers[verifier] = block.timestamp;
+    verifiers[verifier] = block.number;
   }
 
   function deauthorizeVerifier(address verifier) external onlyOwner {
@@ -49,13 +50,13 @@ contract KYCCoin is IdentityClaimTypes, OwnershipProofTypes {
     require(idVerifier.verify(claim, v, r, s), "Could not Verify Identity Claim");
     require(verifiers[claim.issuer] > 0, "Issuer of claim is not Trusted");
     require(claim.loa >= 2, "Level of Assurance is required to be 2 or above");
-    whitelist[claim.subject] = block.timestamp;
+    whitelist[claim.subject] = block.number;
     return true;
   }
 
   function authorize(OwnershipProof memory claim, uint8 v, bytes32 r, bytes32 s) public onlyWhitelisted returns (bool) {
     require(claim.subject == msg.sender, "Level of Assurance is required to be 2 or above");
-    whitelist[ownershipVerifier.ownedAddress(claim, v, r, s)] = block.timestamp;
+    whitelist[ownershipVerifier.ownedAddress(claim, v, r, s)] = block.number;
     return true;
   }
 
