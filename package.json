@@ -1,0 +1,38 @@
+{
+  "name": "eth-typed-verifiable-claims",
+  "version": "0.0.1",
+  "description": "A repository storing keys and other data about Decentralized Identifiers (DIDs)",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "eth-typed-data": "0.1.0-beta.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/truffle test",
+    "lint": "./node_modules/.bin/solhint contracts/EthereumDIDRegistry.sol",
+    "_deploy": "./node_modules/.bin/truffle migrate --network ",
+    "deploy-mainnet": "npm run _deploy mainnet",
+    "deploy-infuranet": "npm run _deploy infuranet",
+    "deploy-ropsten": "npm run _deploy ropsten",
+    "deploy-rinkeby": "npm run _deploy rinkeby",
+    "deploy-kovan": "npm run _deploy kovan",
+    "deploy-local": "npm run _deploy local",
+    "deploy-test": "npm run _deploy test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uport-project/ethr-did-registry"
+  },
+  "author": "Pelle Braendgaard <pelle.braendgaard@consensys.net>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "ethereumjs-tx": "^1.3.7",
+    "ethereumjs-util": "^6.1.0",
+    "ganache-cli": "^6.4.0",
+    "js-sha3": "^0.8.0",
+    "solhint": "^2.0.0",
+    "truffle": "^5.0.5",
+    "truffle-hdwallet-provider": "^1.0.4"
+  }
+}

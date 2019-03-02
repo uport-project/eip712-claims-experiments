@@ -1,0 +1,2701 @@
+{
+  "contractName": "DomainDelegateVerifier",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "_registryAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "components": [
+            {
+              "name": "issuer",
+              "type": "address"
+            },
+            {
+              "name": "subject",
+              "type": "address"
+            },
+            {
+              "name": "domain",
+              "type": "bytes32"
+            },
+            {
+              "name": "type_hash",
+              "type": "bytes32"
+            },
+            {
+              "name": "validFrom",
+              "type": "uint256"
+            },
+            {
+              "name": "validTo",
+              "type": "uint256"
+            }
+          ],
+          "name": "delegate",
+          "type": "tuple"
+        }
+      ],
+      "name": "hash",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "components": [
+            {
+              "name": "issuer",
+              "type": "address"
+            },
+            {
+              "name": "subject",
+              "type": "address"
+            },
+            {
+              "name": "domain",
+              "type": "bytes32"
+            },
+            {
+              "name": "type_hash",
+              "type": "bytes32"
+            },
+            {
+              "name": "validFrom",
+              "type": "uint256"
+            },
+            {
+              "name": "validTo",
+              "type": "uint256"
+            }
+          ],
+          "name": "_delegate",
+          "type": "tuple"
+        },
+        {
+          "name": "v",
+          "type": "uint8"
+        },
+        {
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "name": "s",
+          "type": "bytes32"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50604051602080610adb833981018060405261002f91908101906101c1565b6040805190810160405280601481526020017f454950373132446f6d61696e44656c65676174650000000000000000000000008152506040805190810160405280600181526020017f3100000000000000000000000000000000000000000000000000000000000000815250600130846100ee6080604051908101604052808781526020018681526020018581526020018473ffffffffffffffffffffffffffffffffffffffff1681525061013f640100000000026401000000009004565b600181905550806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050505050506102c2565b60006040518080610a89605291396052019050604051809103902082600001518051906020012083602001518051906020012084604001518560600151604051602001610190959493929190610217565b604051602081830303815290604052805190602001209050919050565b60006101b982516102b0565b905092915050565b6000602082840312156101d357600080fd5b60006101e1848285016101ad565b91505092915050565b6101f38161026a565b82525050565b6102028161027c565b82525050565b610211816102a6565b82525050565b600060a08201905061022c60008301886101f9565b61023960208301876101f9565b61024660408301866101f9565b6102536060830185610208565b61026060808301846101ea565b9695505050505050565b600061027582610286565b9050919050565b6000819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006102bb82610286565b9050919050565b6107b8806102d16000396000f3fe608060405234801561001057600080fd5b5060043610610053576000357c010000000000000000000000000000000000000000000000000000000090048063c82c5eeb14610058578063d7fc8ee414610088575b600080fd5b610072600480360361006d91908101906104a9565b6100b8565b60405161007f91906105a5565b60405180910390f35b6100a2600480360361009d9190810190610480565b610147565b6040516100af91906105c0565b60405180910390f35b60006100c26102ee565b85905060006001546100d383610147565b60405160200180807f19010000000000000000000000000000000000000000000000000000000000008152506002018381526020018281526020019250505060405160208183030381529060405280519060200120905061013b8183600001518888886101b3565b92505050949350505050565b600060405180806107096076913960760190506040518091039020826000015183602001518460400151856060015186608001518760a0015160405160200161019697969594939291906105db565b604051602081830303815290604052805190602001209050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663622b2a3c8660018988888860405160008152602001604052604051808581526020018460ff1660ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610250573d6000803e3d6000fd5b505050602060405103516040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401610293929190610570565b60206040518083038186803b1580156102ab57600080fd5b505afa1580156102bf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506102e39190810190610457565b905095945050505050565b60c060405190810160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600080191681526020016000801916815260200160008152602001600081525090565b600061036382356106c9565b905092915050565b600061037782516106db565b905092915050565b600061038b82356106e7565b905092915050565b600060c082840312156103a557600080fd5b6103af60c061064a565b905060006103bf84828501610357565b60008301525060206103d384828501610357565b60208301525060406103e78482850161037f565b60408301525060606103fb8482850161037f565b606083015250608061040f8482850161042f565b60808301525060a06104238482850161042f565b60a08301525092915050565b600061043b82356106f1565b905092915050565b600061044f82356106fb565b905092915050565b60006020828403121561046957600080fd5b60006104778482850161036b565b91505092915050565b600060c0828403121561049257600080fd5b60006104a084828501610393565b91505092915050565b60008060008061012085870312156104c057600080fd5b60006104ce87828801610393565b94505060c06104df87828801610443565b93505060e06104f08782880161037f565b9250506101006105028782880161037f565b91505092959194509250565b61051781610677565b82525050565b61052681610689565b82525050565b61053581610695565b82525050565b7f766572694b657900000000000000000000000000000000000000000000000000815250565b61056a816106bf565b82525050565b6000606082019050610585600083018561050e565b6105916020830161053b565b61059e604083018461050e565b9392505050565b60006020820190506105ba600083018461051d565b92915050565b60006020820190506105d5600083018461052c565b92915050565b600060e0820190506105f0600083018a61052c565b6105fd602083018961050e565b61060a604083018861050e565b610617606083018761052c565b610624608083018661052c565b61063160a0830185610561565b61063e60c0830184610561565b98975050505050505050565b6000604051905081810181811067ffffffffffffffff8211171561066d57600080fd5b8060405250919050565b60006106828261069f565b9050919050565b60008115159050919050565b6000819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006106d48261069f565b9050919050565b60008115159050919050565b6000819050919050565b6000819050919050565b600060ff8216905091905056fe446f6d61696e44656c65676174652861646472657373206973737565722c2061646472657373207375626a6563742c206279746573333220646f6d61696e2c206279746573333220747970655f686173682c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29a265627a7a723058208fcf998e13c2c90942fa7c0e0870b404ad7a15f985b2eb3422506dc6f921020c6c6578706572696d656e74616cf50037454950373132446f6d61696e28737472696e67206e616d652c737472696e672076657273696f6e2c75696e7432353620636861696e49642c6164647265737320766572696679696e67436f6e747261637429",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610053576000357c010000000000000000000000000000000000000000000000000000000090048063c82c5eeb14610058578063d7fc8ee414610088575b600080fd5b610072600480360361006d91908101906104a9565b6100b8565b60405161007f91906105a5565b60405180910390f35b6100a2600480360361009d9190810190610480565b610147565b6040516100af91906105c0565b60405180910390f35b60006100c26102ee565b85905060006001546100d383610147565b60405160200180807f19010000000000000000000000000000000000000000000000000000000000008152506002018381526020018281526020019250505060405160208183030381529060405280519060200120905061013b8183600001518888886101b3565b92505050949350505050565b600060405180806107096076913960760190506040518091039020826000015183602001518460400151856060015186608001518760a0015160405160200161019697969594939291906105db565b604051602081830303815290604052805190602001209050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663622b2a3c8660018988888860405160008152602001604052604051808581526020018460ff1660ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610250573d6000803e3d6000fd5b505050602060405103516040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401610293929190610570565b60206040518083038186803b1580156102ab57600080fd5b505afa1580156102bf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052506102e39190810190610457565b905095945050505050565b60c060405190810160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600080191681526020016000801916815260200160008152602001600081525090565b600061036382356106c9565b905092915050565b600061037782516106db565b905092915050565b600061038b82356106e7565b905092915050565b600060c082840312156103a557600080fd5b6103af60c061064a565b905060006103bf84828501610357565b60008301525060206103d384828501610357565b60208301525060406103e78482850161037f565b60408301525060606103fb8482850161037f565b606083015250608061040f8482850161042f565b60808301525060a06104238482850161042f565b60a08301525092915050565b600061043b82356106f1565b905092915050565b600061044f82356106fb565b905092915050565b60006020828403121561046957600080fd5b60006104778482850161036b565b91505092915050565b600060c0828403121561049257600080fd5b60006104a084828501610393565b91505092915050565b60008060008061012085870312156104c057600080fd5b60006104ce87828801610393565b94505060c06104df87828801610443565b93505060e06104f08782880161037f565b9250506101006105028782880161037f565b91505092959194509250565b61051781610677565b82525050565b61052681610689565b82525050565b61053581610695565b82525050565b7f766572694b657900000000000000000000000000000000000000000000000000815250565b61056a816106bf565b82525050565b6000606082019050610585600083018561050e565b6105916020830161053b565b61059e604083018461050e565b9392505050565b60006020820190506105ba600083018461051d565b92915050565b60006020820190506105d5600083018461052c565b92915050565b600060e0820190506105f0600083018a61052c565b6105fd602083018961050e565b61060a604083018861050e565b610617606083018761052c565b610624608083018661052c565b61063160a0830185610561565b61063e60c0830184610561565b98975050505050505050565b6000604051905081810181811067ffffffffffffffff8211171561066d57600080fd5b8060405250919050565b60006106828261069f565b9050919050565b60008115159050919050565b6000819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006106d48261069f565b9050919050565b60008115159050919050565b6000819050919050565b6000819050919050565b600060ff8216905091905056fe446f6d61696e44656c65676174652861646472657373206973737565722c2061646472657373207375626a6563742c206279746573333220646f6d61696e2c206279746573333220747970655f686173682c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29a265627a7a723058208fcf998e13c2c90942fa7c0e0870b404ad7a15f985b2eb3422506dc6f921020c6c6578706572696d656e74616cf50037",
+  "sourceMap": "153:917:1:-;;;237:136;8:9:-1;5:2;;;30:1;27;20:12;5:2;237:136:1;;;;;;;;;;;;;;;;;;;;;;439:368:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;328:1:1;339:4;346:16;597:151:0;609:138;;;;;;;;;638:4;609:138;;;;661:7;609:138;;;;687:7;609:138;;;;723:17;609:138;;;;;597:4;;;:151;;;:::i;:::-;578:16;:170;;;;785:16;754:8;;:48;;;;;;;;;;;;;;;;;;439:368;;;;;237:136:1;153:917;;811:326:0;882:7;302:103;;;;;;;;;;;;;;;;;;;988:12;:17;;;972:35;;;;;;1033:12;:20;;;1017:38;;;;;;1065:12;:20;;;1095:12;:30;;;921:210;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;921:210:0;;;904:228;;;;;;897:235;;811:326;;;:::o;5:122:-1:-;;83:39;114:6;108:13;83:39;;;74:48;;68:59;;;;;134:263;;249:2;237:9;228:7;224:23;220:32;217:2;;;265:1;262;255:12;217:2;300:1;317:64;373:7;364:6;353:9;349:22;317:64;;;307:74;;279:108;211:186;;;;;404:120;487:31;512:5;487:31;;;482:3;475:44;469:55;;;531:120;614:31;639:5;614:31;;;609:3;602:44;596:55;;;658:120;741:31;766:5;741:31;;;736:3;729:44;723:55;;;785:659;;1015:3;1004:9;1000:19;992:27;;1030:71;1098:1;1087:9;1083:17;1074:6;1030:71;;;1112:72;1180:2;1169:9;1165:18;1156:6;1112:72;;;1195;1263:2;1252:9;1248:18;1239:6;1195:72;;;1278;1346:2;1335:9;1331:18;1322:6;1278:72;;;1361:73;1429:3;1418:9;1414:19;1405:6;1361:73;;;986:458;;;;;;;;;1451:105;;1520:31;1545:5;1520:31;;;1509:42;;1503:53;;;;1563:79;;1632:5;1621:16;;1615:27;;;;1649:128;;1729:42;1722:5;1718:54;1707:65;;1701:76;;;;1784:79;;1853:5;1842:16;;1836:27;;;;1870:105;;1939:31;1964:5;1939:31;;;1928:42;;1922:53;;;;153:917:1;;;;;;;",
+  "deployedSourceMap": "153:917:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;153:917:1;;;;;;;;;;;;;;;;;;;;;;;;;708:359;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;377:327;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;708:359;809:4;821:30;;:::i;:::-;854:9;821:42;;869:14;949:16;;975:14;980:8;975:4;:14::i;:::-;903:94;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;903:94:1;;;886:117;;;;;;869:134;;1016:46;1029:6;1037:8;:15;;;1054:1;1057;1060;1016:12;:46::i;:::-;1009:53;;;;708:359;;;;;;:::o;377:327::-;444:7;270:139:6;;;;;;;;;;;;;;;;;;;537:8:1;:15;;;562:8;:16;;;588:8;:15;;;613:8;:18;;;641:8;:18;;;669:8;:16;;;483:210;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;483:210:1;;;466:233;;;;;;459:240;;377:327;;;:::o;1304:201:0:-;1412:4;1431:8;;;;;;;;;;;:22;;;1454:6;1473:26;1483:6;1491:1;1494;1497;1473:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1473:26:0;;;;;;;;1431:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1431:69:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1431:69:0;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;1431:69:0;;;;;;;;;1424:76;;1304:201;;;;;;;:::o;153:917:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5:118:-1:-;;72:46;110:6;97:20;72:46;;;63:55;;57:66;;;;;130:116;;205:36;233:6;227:13;205:36;;;196:45;;190:56;;;;;253:118;;320:46;358:6;345:20;320:46;;;311:55;;305:66;;;;;426:1070;;546:4;534:9;529:3;525:19;521:30;518:2;;;564:1;561;554:12;518:2;582:20;597:4;582:20;;;573:29;;654:1;685:49;730:3;721:6;710:9;706:22;685:49;;;679:3;672:5;668:15;661:74;612:134;799:2;832:49;877:3;868:6;857:9;853:22;832:49;;;825:4;818:5;814:16;807:75;756:137;945:2;978:49;1023:3;1014:6;1003:9;999:22;978:49;;;971:4;964:5;960:16;953:75;903:136;1094:2;1127:49;1172:3;1163:6;1152:9;1148:22;1127:49;;;1120:4;1113:5;1109:16;1102:75;1049:139;1243:3;1277:49;1322:3;1313:6;1302:9;1298:22;1277:49;;;1270:4;1263:5;1259:16;1252:75;1198:140;1391:3;1425:49;1470:3;1461:6;1450:9;1446:22;1425:49;;;1418:4;1411:5;1407:16;1400:75;1348:138;512:984;;;;;1503:118;;1570:46;1608:6;1595:20;1570:46;;;1561:55;;1555:66;;;;;1628:114;;1693:44;1729:6;1716:20;1693:44;;;1684:53;;1678:64;;;;;1749:257;;1861:2;1849:9;1840:7;1836:23;1832:32;1829:2;;;1877:1;1874;1867:12;1829:2;1912:1;1929:61;1982:7;1973:6;1962:9;1958:22;1929:61;;;1919:71;;1891:105;1823:183;;;;;2013:304;;2148:3;2136:9;2127:7;2123:23;2119:33;2116:2;;;2165:1;2162;2155:12;2116:2;2200:1;2217:84;2293:7;2284:6;2273:9;2269:22;2217:84;;;2207:94;;2179:128;2110:207;;;;;2324:678;;;;;2508:3;2496:9;2487:7;2483:23;2479:33;2476:2;;;2525:1;2522;2515:12;2476:2;2560:1;2577:84;2653:7;2644:6;2633:9;2629:22;2577:84;;;2567:94;;2539:128;2698:3;2717:51;2760:7;2751:6;2740:9;2736:22;2717:51;;;2707:61;;2677:97;2805:3;2824:53;2869:7;2860:6;2849:9;2845:22;2824:53;;;2814:63;;2784:99;2914:3;2933:53;2978:7;2969:6;2958:9;2954:22;2933:53;;;2923:63;;2893:99;2470:532;;;;;;;;3009:120;3092:31;3117:5;3092:31;;;3087:3;3080:44;3074:55;;;3136:111;3213:28;3235:5;3213:28;;;3208:3;3201:41;3195:52;;;3254:120;3337:31;3362:5;3337:31;;;3332:3;3325:44;3319:55;;;3382:221;3530:66;3525:3;3518:79;3511:92;;3611:120;3694:31;3719:5;3694:31;;;3689:3;3682:44;3676:55;;;3738:561;;3975:2;3964:9;3960:18;3952:26;;3989:71;4057:1;4046:9;4042:17;4033:6;3989:71;;;4071:135;4202:2;4191:9;4187:18;4071:135;;;4217:72;4285:2;4274:9;4270:18;4261:6;4217:72;;;3946:353;;;;;;4306:201;;4418:2;4407:9;4403:18;4395:26;;4432:65;4494:1;4483:9;4479:17;4470:6;4432:65;;;4389:118;;;;;4514:213;;4632:2;4621:9;4617:18;4609:26;;4646:71;4714:1;4703:9;4699:17;4690:6;4646:71;;;4603:124;;;;;4734:883;;5020:3;5009:9;5005:19;4997:27;;5035:71;5103:1;5092:9;5088:17;5079:6;5035:71;;;5117:72;5185:2;5174:9;5170:18;5161:6;5117:72;;;5200;5268:2;5257:9;5253:18;5244:6;5200:72;;;5283;5351:2;5340:9;5336:18;5327:6;5283:72;;;5366:73;5434:3;5423:9;5419:19;5410:6;5366:73;;;5450;5518:3;5507:9;5503:19;5494:6;5450:73;;;5534;5602:3;5591:9;5587:19;5578:6;5534:73;;;4991:626;;;;;;;;;;;5624:256;;5686:2;5680:9;5670:19;;5724:4;5716:6;5712:17;5823:6;5811:10;5808:22;5787:18;5775:10;5772:34;5769:62;5766:2;;;5844:1;5841;5834:12;5766:2;5864:10;5860:2;5853:22;5664:216;;;;;5887:105;;5956:31;5981:5;5956:31;;;5945:42;;5939:53;;;;5999:92;;6079:5;6072:13;6065:21;6054:32;;6048:43;;;;6098:79;;6167:5;6156:16;;6150:27;;;;6184:128;;6264:42;6257:5;6253:54;6242:65;;6236:76;;;;6319:79;;6388:5;6377:16;;6371:27;;;;6405:105;;6474:31;6499:5;6474:31;;;6463:42;;6457:53;;;;6517:92;;6597:5;6590:13;6583:21;6572:32;;6566:43;;;;6616:79;;6685:5;6674:16;;6668:27;;;;6702:79;;6771:5;6760:16;;6754:27;;;;6788:88;;6866:4;6859:5;6855:16;6844:27;;6838:38;;;",
+  "source": "pragma solidity >=0.5.3 <0.6.0;\npragma experimental ABIEncoderV2;\nimport \"./AbstractClaimsVerifier.sol\";\nimport \"./claimTypes/DomainDelegateTypes.sol\";\n\ncontract DomainDelegateVerifier is AbstractClaimsVerifier, DomainDelegateTypes {\n\n  constructor (address _registryAddress) AbstractClaimsVerifier(\"EIP712DomainDelegate\", \"1\", 1, address(this), _registryAddress) public {}\n\n  function hash(DomainDelegate memory delegate) public pure returns (bytes32) {\n    return keccak256(\n      abi.encode(\n        DOMAIN_DELEGATE_TYPEHASH,\n        delegate.issuer,\n        delegate.subject,\n        delegate.domain,\n        delegate.type_hash,\n        delegate.validFrom,\n        delegate.validTo\n      )\n    );\n  }\n\n  function verify(DomainDelegate memory _delegate, uint8 v, bytes32 r, bytes32 s) public view returns (bool) {\n    DomainDelegate memory delegate = _delegate;\n    bytes32 digest = keccak256(\n      abi.encodePacked(\n        \"\\x19\\x01\",\n        DOMAIN_SEPARATOR,\n        hash(delegate)\n      )\n    );\n    return verifyIssuer(digest, delegate.issuer, v, r, s);\n  }\n\n}",
+  "sourcePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/DomainDelegateVerifier.sol",
+  "ast": {
+    "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/DomainDelegateVerifier.sol",
+    "exportedSymbols": {
+      "DomainDelegateVerifier": [
+        225
+      ]
+    },
+    "id": 226,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 135,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".3",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "id": 136,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:33:1"
+      },
+      {
+        "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/AbstractClaimsVerifier.sol",
+        "file": "./AbstractClaimsVerifier.sol",
+        "id": 137,
+        "nodeType": "ImportDirective",
+        "scope": 226,
+        "sourceUnit": 134,
+        "src": "66:38:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/DomainDelegateTypes.sol",
+        "file": "./claimTypes/DomainDelegateTypes.sol",
+        "id": 138,
+        "nodeType": "ImportDirective",
+        "scope": 226,
+        "sourceUnit": 717,
+        "src": "105:46:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 139,
+              "name": "AbstractClaimsVerifier",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 133,
+              "src": "188:22:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AbstractClaimsVerifier_$133",
+                "typeString": "contract AbstractClaimsVerifier"
+              }
+            },
+            "id": 140,
+            "nodeType": "InheritanceSpecifier",
+            "src": "188:22:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 141,
+              "name": "DomainDelegateTypes",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 716,
+              "src": "212:19:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DomainDelegateTypes_$716",
+                "typeString": "contract DomainDelegateTypes"
+              }
+            },
+            "id": 142,
+            "nodeType": "InheritanceSpecifier",
+            "src": "212:19:1"
+          }
+        ],
+        "contractDependencies": [
+          133,
+          716
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 225,
+        "linearizedBaseContracts": [
+          225,
+          716,
+          133
+        ],
+        "name": "DomainDelegateVerifier",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 156,
+              "nodeType": "Block",
+              "src": "371:2:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 157,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "454950373132446f6d61696e44656c6567617465",
+                    "id": 147,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "299:22:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_fc8dc092f9aded526eb2a52a014d787a4f70027d03a7fef0596a85292036b4ce",
+                      "typeString": "literal_string \"EIP712DomainDelegate\""
+                    },
+                    "value": "EIP712DomainDelegate"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "31",
+                    "id": 148,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "323:3:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_c89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+                      "typeString": "literal_string \"1\""
+                    },
+                    "value": "1"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "31",
+                    "id": 149,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "328:1:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_1_by_1",
+                      "typeString": "int_const 1"
+                    },
+                    "value": "1"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 151,
+                        "name": "this",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 788,
+                        "src": "339:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DomainDelegateVerifier_$225",
+                          "typeString": "contract DomainDelegateVerifier"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_DomainDelegateVerifier_$225",
+                          "typeString": "contract DomainDelegateVerifier"
+                        }
+                      ],
+                      "id": 150,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "331:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 152,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 153,
+                    "name": "_registryAddress",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 144,
+                    "src": "346:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 154,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 146,
+                  "name": "AbstractClaimsVerifier",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 133,
+                  "src": "276:22:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_AbstractClaimsVerifier_$133_$",
+                    "typeString": "type(contract AbstractClaimsVerifier)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "276:87:1"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 145,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 144,
+                  "name": "_registryAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 157,
+                  "src": "250:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 143,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "249:26:1"
+            },
+            "returnParameters": {
+              "id": 155,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "371:0:1"
+            },
+            "scope": 225,
+            "src": "237:136:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 183,
+              "nodeType": "Block",
+              "src": "453:251:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 167,
+                            "name": "DOMAIN_DELEGATE_TYPEHASH",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 715,
+                            "src": "503:24:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 168,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "537:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 169,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "issuer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 699,
+                            "src": "537:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 170,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "562:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 171,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "subject",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 701,
+                            "src": "562:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 172,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "588:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 173,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "domain",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 703,
+                            "src": "588:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 174,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "613:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 175,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "type_hash",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 705,
+                            "src": "613:18:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 176,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "641:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 177,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "validFrom",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 707,
+                            "src": "641:18:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 178,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "669:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 179,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "validTo",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 709,
+                            "src": "669:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 165,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 755,
+                            "src": "483:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 166,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encode",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "483:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 180,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "483:210:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 164,
+                      "name": "keccak256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 762,
+                      "src": "466:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 181,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "466:233:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 163,
+                  "id": 182,
+                  "nodeType": "Return",
+                  "src": "459:240:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 184,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 160,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 159,
+                  "name": "delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "391:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                    "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 158,
+                    "name": "DomainDelegate",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 710,
+                    "src": "391:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DomainDelegate_$710_storage_ptr",
+                      "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "390:32:1"
+            },
+            "returnParameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 162,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "444:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 161,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "444:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "443:9:1"
+            },
+            "scope": 225,
+            "src": "377:327:1",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 223,
+              "nodeType": "Block",
+              "src": "815:252:1",
+              "statements": [
+                {
+                  "assignments": [
+                    198
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 198,
+                      "name": "delegate",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 223,
+                      "src": "821:30:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                        "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 197,
+                        "name": "DomainDelegate",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 710,
+                        "src": "821:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_DomainDelegate_$710_storage_ptr",
+                          "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 200,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 199,
+                    "name": "_delegate",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 186,
+                    "src": "854:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                      "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "821:42:1"
+                },
+                {
+                  "assignments": [
+                    202
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 202,
+                      "name": "digest",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 223,
+                      "src": "869:14:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 201,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "869:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 213,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "1901",
+                            "id": 206,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "string",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "929:10:1",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_stringliteral_301a50b291d33ce1e8e9064e3f6a6c51d902ec22892b50d58abf6357c6a45541",
+                              "typeString": "literal_string \"\u0019\u0001\""
+                            },
+                            "value": "\u0019\u0001"
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 207,
+                            "name": "DOMAIN_SEPARATOR",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 20,
+                            "src": "949:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 209,
+                                "name": "delegate",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 198,
+                                "src": "980:8:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                  "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                  "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                                }
+                              ],
+                              "id": 208,
+                              "name": "hash",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [
+                                184,
+                                82
+                              ],
+                              "referencedDeclaration": 184,
+                              "src": "975:4:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_pure$_t_struct$_DomainDelegate_$710_memory_ptr_$returns$_t_bytes32_$",
+                                "typeString": "function (struct DomainDelegateTypes.DomainDelegate memory) pure returns (bytes32)"
+                              }
+                            },
+                            "id": 210,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "975:14:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_stringliteral_301a50b291d33ce1e8e9064e3f6a6c51d902ec22892b50d58abf6357c6a45541",
+                              "typeString": "literal_string \"\u0019\u0001\""
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 204,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 755,
+                            "src": "903:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 205,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encodePacked",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "903:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 211,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "903:94:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 203,
+                      "name": "keccak256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 762,
+                      "src": "886:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "886:117:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "869:134:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 215,
+                        "name": "digest",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 202,
+                        "src": "1029:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 216,
+                          "name": "delegate",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 198,
+                          "src": "1037:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                            "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                          }
+                        },
+                        "id": 217,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "issuer",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 699,
+                        "src": "1037:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 218,
+                        "name": "v",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 188,
+                        "src": "1054:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 219,
+                        "name": "r",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "1057:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 220,
+                        "name": "s",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 192,
+                        "src": "1060:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 214,
+                      "name": "verifyIssuer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 132,
+                      "src": "1016:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (bytes32,address,uint8,bytes32,bytes32) view returns (bool)"
+                      }
+                    },
+                    "id": 221,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1016:46:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 196,
+                  "id": 222,
+                  "nodeType": "Return",
+                  "src": "1009:53:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 224,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 186,
+                  "name": "_delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "724:31:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                    "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 185,
+                    "name": "DomainDelegate",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 710,
+                    "src": "724:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DomainDelegate_$710_storage_ptr",
+                      "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 188,
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "757:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 187,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "757:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 190,
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "766:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 189,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "766:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 192,
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "777:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 191,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "777:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "723:64:1"
+            },
+            "returnParameters": {
+              "id": 196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 195,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "809:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 194,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "808:6:1"
+            },
+            "scope": 225,
+            "src": "708:359:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 226,
+        "src": "153:917:1"
+      }
+    ],
+    "src": "0:1070:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/DomainDelegateVerifier.sol",
+    "exportedSymbols": {
+      "DomainDelegateVerifier": [
+        225
+      ]
+    },
+    "id": 226,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 135,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".3",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "id": 136,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:33:1"
+      },
+      {
+        "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/AbstractClaimsVerifier.sol",
+        "file": "./AbstractClaimsVerifier.sol",
+        "id": 137,
+        "nodeType": "ImportDirective",
+        "scope": 226,
+        "sourceUnit": 134,
+        "src": "66:38:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/DomainDelegateTypes.sol",
+        "file": "./claimTypes/DomainDelegateTypes.sol",
+        "id": 138,
+        "nodeType": "ImportDirective",
+        "scope": 226,
+        "sourceUnit": 717,
+        "src": "105:46:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 139,
+              "name": "AbstractClaimsVerifier",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 133,
+              "src": "188:22:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AbstractClaimsVerifier_$133",
+                "typeString": "contract AbstractClaimsVerifier"
+              }
+            },
+            "id": 140,
+            "nodeType": "InheritanceSpecifier",
+            "src": "188:22:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 141,
+              "name": "DomainDelegateTypes",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 716,
+              "src": "212:19:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DomainDelegateTypes_$716",
+                "typeString": "contract DomainDelegateTypes"
+              }
+            },
+            "id": 142,
+            "nodeType": "InheritanceSpecifier",
+            "src": "212:19:1"
+          }
+        ],
+        "contractDependencies": [
+          133,
+          716
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 225,
+        "linearizedBaseContracts": [
+          225,
+          716,
+          133
+        ],
+        "name": "DomainDelegateVerifier",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 156,
+              "nodeType": "Block",
+              "src": "371:2:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 157,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "454950373132446f6d61696e44656c6567617465",
+                    "id": 147,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "299:22:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_fc8dc092f9aded526eb2a52a014d787a4f70027d03a7fef0596a85292036b4ce",
+                      "typeString": "literal_string \"EIP712DomainDelegate\""
+                    },
+                    "value": "EIP712DomainDelegate"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "31",
+                    "id": 148,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "323:3:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_c89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
+                      "typeString": "literal_string \"1\""
+                    },
+                    "value": "1"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "31",
+                    "id": 149,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "328:1:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_1_by_1",
+                      "typeString": "int_const 1"
+                    },
+                    "value": "1"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 151,
+                        "name": "this",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 788,
+                        "src": "339:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DomainDelegateVerifier_$225",
+                          "typeString": "contract DomainDelegateVerifier"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_DomainDelegateVerifier_$225",
+                          "typeString": "contract DomainDelegateVerifier"
+                        }
+                      ],
+                      "id": 150,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "331:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 152,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "331:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 153,
+                    "name": "_registryAddress",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 144,
+                    "src": "346:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 154,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 146,
+                  "name": "AbstractClaimsVerifier",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 133,
+                  "src": "276:22:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_AbstractClaimsVerifier_$133_$",
+                    "typeString": "type(contract AbstractClaimsVerifier)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "276:87:1"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 145,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 144,
+                  "name": "_registryAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 157,
+                  "src": "250:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 143,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "249:26:1"
+            },
+            "returnParameters": {
+              "id": 155,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "371:0:1"
+            },
+            "scope": 225,
+            "src": "237:136:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 183,
+              "nodeType": "Block",
+              "src": "453:251:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 167,
+                            "name": "DOMAIN_DELEGATE_TYPEHASH",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 715,
+                            "src": "503:24:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 168,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "537:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 169,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "issuer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 699,
+                            "src": "537:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 170,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "562:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 171,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "subject",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 701,
+                            "src": "562:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 172,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "588:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 173,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "domain",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 703,
+                            "src": "588:15:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 174,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "613:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 175,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "type_hash",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 705,
+                            "src": "613:18:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 176,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "641:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 177,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "validFrom",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 707,
+                            "src": "641:18:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 178,
+                              "name": "delegate",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 159,
+                              "src": "669:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                              }
+                            },
+                            "id": 179,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "validTo",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 709,
+                            "src": "669:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 165,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 755,
+                            "src": "483:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 166,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encode",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "483:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 180,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "483:210:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 164,
+                      "name": "keccak256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 762,
+                      "src": "466:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 181,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "466:233:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 163,
+                  "id": 182,
+                  "nodeType": "Return",
+                  "src": "459:240:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 184,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 160,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 159,
+                  "name": "delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "391:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                    "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 158,
+                    "name": "DomainDelegate",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 710,
+                    "src": "391:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DomainDelegate_$710_storage_ptr",
+                      "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "390:32:1"
+            },
+            "returnParameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 162,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "444:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 161,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "444:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "443:9:1"
+            },
+            "scope": 225,
+            "src": "377:327:1",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 223,
+              "nodeType": "Block",
+              "src": "815:252:1",
+              "statements": [
+                {
+                  "assignments": [
+                    198
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 198,
+                      "name": "delegate",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 223,
+                      "src": "821:30:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                        "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 197,
+                        "name": "DomainDelegate",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 710,
+                        "src": "821:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_DomainDelegate_$710_storage_ptr",
+                          "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 200,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 199,
+                    "name": "_delegate",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 186,
+                    "src": "854:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                      "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "821:42:1"
+                },
+                {
+                  "assignments": [
+                    202
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 202,
+                      "name": "digest",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 223,
+                      "src": "869:14:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 201,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "869:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 213,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "1901",
+                            "id": 206,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "string",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "929:10:1",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_stringliteral_301a50b291d33ce1e8e9064e3f6a6c51d902ec22892b50d58abf6357c6a45541",
+                              "typeString": "literal_string \"\u0019\u0001\""
+                            },
+                            "value": "\u0019\u0001"
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 207,
+                            "name": "DOMAIN_SEPARATOR",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 20,
+                            "src": "949:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 209,
+                                "name": "delegate",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 198,
+                                "src": "980:8:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                  "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                                  "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                                }
+                              ],
+                              "id": 208,
+                              "name": "hash",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [
+                                184,
+                                82
+                              ],
+                              "referencedDeclaration": 184,
+                              "src": "975:4:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_pure$_t_struct$_DomainDelegate_$710_memory_ptr_$returns$_t_bytes32_$",
+                                "typeString": "function (struct DomainDelegateTypes.DomainDelegate memory) pure returns (bytes32)"
+                              }
+                            },
+                            "id": 210,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "975:14:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_stringliteral_301a50b291d33ce1e8e9064e3f6a6c51d902ec22892b50d58abf6357c6a45541",
+                              "typeString": "literal_string \"\u0019\u0001\""
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 204,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 755,
+                            "src": "903:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 205,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "encodePacked",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "903:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 211,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "903:94:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 203,
+                      "name": "keccak256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 762,
+                      "src": "886:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "886:117:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "869:134:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 215,
+                        "name": "digest",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 202,
+                        "src": "1029:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 216,
+                          "name": "delegate",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 198,
+                          "src": "1037:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                            "typeString": "struct DomainDelegateTypes.DomainDelegate memory"
+                          }
+                        },
+                        "id": 217,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "issuer",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 699,
+                        "src": "1037:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 218,
+                        "name": "v",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 188,
+                        "src": "1054:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 219,
+                        "name": "r",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "1057:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 220,
+                        "name": "s",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 192,
+                        "src": "1060:1:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 214,
+                      "name": "verifyIssuer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 132,
+                      "src": "1016:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (bytes32,address,uint8,bytes32,bytes32) view returns (bool)"
+                      }
+                    },
+                    "id": 221,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1016:46:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 196,
+                  "id": 222,
+                  "nodeType": "Return",
+                  "src": "1009:53:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 224,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 186,
+                  "name": "_delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "724:31:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DomainDelegate_$710_memory_ptr",
+                    "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 185,
+                    "name": "DomainDelegate",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 710,
+                    "src": "724:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DomainDelegate_$710_storage_ptr",
+                      "typeString": "struct DomainDelegateTypes.DomainDelegate"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 188,
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "757:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 187,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "757:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 190,
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "766:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 189,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "766:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 192,
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "777:9:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 191,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "777:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "723:64:1"
+            },
+            "returnParameters": {
+              "id": 196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 195,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 224,
+                  "src": "809:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 194,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "808:6:1"
+            },
+            "scope": 225,
+            "src": "708:359:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 226,
+        "src": "153:917:1"
+      }
+    ],
+    "src": "0:1070:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.3+commit.10d17f24.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-02T00:30:33.538Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

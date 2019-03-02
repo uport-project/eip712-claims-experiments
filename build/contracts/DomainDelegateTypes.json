@@ -1,0 +1,607 @@
+{
+  "contractName": "DomainDelegateTypes",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820ba59ce365105f5a53bf387f163a71a81d8ecb643592ee2287bcb6d67c22af92e0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820ba59ce365105f5a53bf387f163a71a81d8ecb643592ee2287bcb6d67c22af92e0029",
+  "sourceMap": "33:382:6:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:382:6;;;;;;;",
+  "deployedSourceMap": "33:382:6:-;;;;;",
+  "source": "pragma solidity >=0.5.3 <0.6.0;\n\ncontract DomainDelegateTypes {\n\n  struct DomainDelegate {\n    address issuer;\n    address subject;\n    bytes32 domain;\n    bytes32 type_hash;\n    uint256 validFrom;\n    uint256 validTo;\n  }\n\n  bytes32 constant DOMAIN_DELEGATE_TYPEHASH = keccak256(\n    \"DomainDelegate(address issuer, address subject, bytes32 domain, bytes32 type_hash, uint256 validFrom, uint256 validTo)\"\n  );\n  \n}\n",
+  "sourcePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/DomainDelegateTypes.sol",
+  "ast": {
+    "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/DomainDelegateTypes.sol",
+    "exportedSymbols": {
+      "DomainDelegateTypes": [
+        716
+      ]
+    },
+    "id": 717,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 697,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".3",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:6"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 716,
+        "linearizedBaseContracts": [
+          716
+        ],
+        "name": "DomainDelegateTypes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DomainDelegateTypes.DomainDelegate",
+            "id": 710,
+            "members": [
+              {
+                "constant": false,
+                "id": 699,
+                "name": "issuer",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "95:14:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 698,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "95:7:6",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 701,
+                "name": "subject",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "115:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 700,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "115:7:6",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 703,
+                "name": "domain",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "136:14:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 702,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "136:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 705,
+                "name": "type_hash",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "156:17:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 704,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "156:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 707,
+                "name": "validFrom",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "179:17:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 706,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "179:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 709,
+                "name": "validTo",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "202:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 708,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "202:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "DomainDelegate",
+            "nodeType": "StructDefinition",
+            "scope": 716,
+            "src": "67:155:6",
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 715,
+            "name": "DOMAIN_DELEGATE_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 716,
+            "src": "226:183:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 711,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "226:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "446f6d61696e44656c65676174652861646472657373206973737565722c2061646472657373207375626a6563742c206279746573333220646f6d61696e2c206279746573333220747970655f686173682c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29",
+                  "id": 713,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "285:120:6",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_e44f8c1940629869e86e4b0d43e334f8ea039640145734515b04ca3aa9c6619a",
+                    "typeString": "literal_string \"DomainDelegate(address issuer, address subject, bytes32 domain, bytes32 type_hash, uint256 validFrom, uint256 validTo)\""
+                  },
+                  "value": "DomainDelegate(address issuer, address subject, bytes32 domain, bytes32 type_hash, uint256 validFrom, uint256 validTo)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_e44f8c1940629869e86e4b0d43e334f8ea039640145734515b04ca3aa9c6619a",
+                    "typeString": "literal_string \"DomainDelegate(address issuer, address subject, bytes32 domain, bytes32 type_hash, uint256 validFrom, uint256 validTo)\""
+                  }
+                ],
+                "id": 712,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 762,
+                "src": "270:9:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 714,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "270:139:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 717,
+        "src": "33:382:6"
+      }
+    ],
+    "src": "0:416:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/DomainDelegateTypes.sol",
+    "exportedSymbols": {
+      "DomainDelegateTypes": [
+        716
+      ]
+    },
+    "id": 717,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 697,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".3",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:6"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 716,
+        "linearizedBaseContracts": [
+          716
+        ],
+        "name": "DomainDelegateTypes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DomainDelegateTypes.DomainDelegate",
+            "id": 710,
+            "members": [
+              {
+                "constant": false,
+                "id": 699,
+                "name": "issuer",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "95:14:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 698,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "95:7:6",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 701,
+                "name": "subject",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "115:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 700,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "115:7:6",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 703,
+                "name": "domain",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "136:14:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 702,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "136:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 705,
+                "name": "type_hash",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "156:17:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 704,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "156:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 707,
+                "name": "validFrom",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "179:17:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 706,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "179:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 709,
+                "name": "validTo",
+                "nodeType": "VariableDeclaration",
+                "scope": 710,
+                "src": "202:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 708,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "202:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "DomainDelegate",
+            "nodeType": "StructDefinition",
+            "scope": 716,
+            "src": "67:155:6",
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 715,
+            "name": "DOMAIN_DELEGATE_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 716,
+            "src": "226:183:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 711,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "226:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "446f6d61696e44656c65676174652861646472657373206973737565722c2061646472657373207375626a6563742c206279746573333220646f6d61696e2c206279746573333220747970655f686173682c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29",
+                  "id": 713,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "285:120:6",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_e44f8c1940629869e86e4b0d43e334f8ea039640145734515b04ca3aa9c6619a",
+                    "typeString": "literal_string \"DomainDelegate(address issuer, address subject, bytes32 domain, bytes32 type_hash, uint256 validFrom, uint256 validTo)\""
+                  },
+                  "value": "DomainDelegate(address issuer, address subject, bytes32 domain, bytes32 type_hash, uint256 validFrom, uint256 validTo)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_e44f8c1940629869e86e4b0d43e334f8ea039640145734515b04ca3aa9c6619a",
+                    "typeString": "literal_string \"DomainDelegate(address issuer, address subject, bytes32 domain, bytes32 type_hash, uint256 validFrom, uint256 validTo)\""
+                  }
+                ],
+                "id": 712,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 762,
+                "src": "270:9:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 714,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "270:139:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 717,
+        "src": "33:382:6"
+      }
+    ],
+    "src": "0:416:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.3+commit.10d17f24.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-02T00:30:33.545Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

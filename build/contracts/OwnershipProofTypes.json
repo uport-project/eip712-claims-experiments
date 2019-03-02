@@ -1,0 +1,841 @@
+{
+  "contractName": "OwnershipProofTypes",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a7230582047b148029f33b113f0bea2c8b4247edf83f25c034137e12aad5fb31f645ddabc0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a7230582047b148029f33b113f0bea2c8b4247edf83f25c034137e12aad5fb31f645ddabc0029",
+  "sourceMap": "33:558:9:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:558:9;;;;;;;",
+  "deployedSourceMap": "33:558:9:-;;;;;",
+  "source": "pragma solidity >=0.5.3 <0.6.0;\n\ncontract OwnershipProofTypes {\n  struct OwnershipProof {\n    address subject;\n    uint256 validFrom;\n    uint256 validTo;\n  }\n\n  struct ContractOwnershipProof {\n    address issuer;\n    address subject;\n    uint256 validFrom;\n    uint256 validTo;\n  }\n\n  bytes32 constant OWNERSHIP_PROOF_TYPEHASH = keccak256(\n    \"OwnershipProof(address subject, uint256 validFrom, uint256 validTo)\"\n  );\n\n  bytes32 constant CONTRACT_OWNERSHIP_PROOF_TYPEHASH = keccak256(\n    \"ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)\"\n  );\n}",
+  "sourcePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/OwnershipProofTypes.sol",
+  "ast": {
+    "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/OwnershipProofTypes.sol",
+    "exportedSymbols": {
+      "OwnershipProofTypes": [
+        951
+      ]
+    },
+    "id": 952,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 924,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".3",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:9"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 951,
+        "linearizedBaseContracts": [
+          951
+        ],
+        "name": "OwnershipProofTypes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "OwnershipProofTypes.OwnershipProof",
+            "id": 931,
+            "members": [
+              {
+                "constant": false,
+                "id": 926,
+                "name": "subject",
+                "nodeType": "VariableDeclaration",
+                "scope": 931,
+                "src": "94:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 925,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "94:7:9",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 928,
+                "name": "validFrom",
+                "nodeType": "VariableDeclaration",
+                "scope": 931,
+                "src": "115:17:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 927,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "115:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 930,
+                "name": "validTo",
+                "nodeType": "VariableDeclaration",
+                "scope": 931,
+                "src": "138:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 929,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "138:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "OwnershipProof",
+            "nodeType": "StructDefinition",
+            "scope": 951,
+            "src": "66:92:9",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "OwnershipProofTypes.ContractOwnershipProof",
+            "id": 940,
+            "members": [
+              {
+                "constant": false,
+                "id": 933,
+                "name": "issuer",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "198:14:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 932,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "198:7:9",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 935,
+                "name": "subject",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "218:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 934,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "218:7:9",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 937,
+                "name": "validFrom",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "239:17:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 936,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "239:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 939,
+                "name": "validTo",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "262:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 938,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "262:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ContractOwnershipProof",
+            "nodeType": "StructDefinition",
+            "scope": 951,
+            "src": "162:120:9",
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 945,
+            "name": "OWNERSHIP_PROOF_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 951,
+            "src": "286:132:9",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 941,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "286:7:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "4f776e65727368697050726f6f662861646472657373207375626a6563742c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29",
+                  "id": 943,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "345:69:9",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_10e4f4a65f0187b01ebfe380fa9a2bfa9362ab11931384d4cc30be3c3ecfda0a",
+                    "typeString": "literal_string \"OwnershipProof(address subject, uint256 validFrom, uint256 validTo)\""
+                  },
+                  "value": "OwnershipProof(address subject, uint256 validFrom, uint256 validTo)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_10e4f4a65f0187b01ebfe380fa9a2bfa9362ab11931384d4cc30be3c3ecfda0a",
+                    "typeString": "literal_string \"OwnershipProof(address subject, uint256 validFrom, uint256 validTo)\""
+                  }
+                ],
+                "id": 942,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 960,
+                "src": "330:9:9",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 944,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "330:88:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 950,
+            "name": "CONTRACT_OWNERSHIP_PROOF_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 951,
+            "src": "423:165:9",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 946,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "423:7:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "436f6e74726163744f776e65727368697050726f6f662861646472657373206973737565722c2061646472657373207375626a6563742c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29",
+                  "id": 948,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "491:93:9",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_da0ffa0de7087a0ebf6c9cb2a2e66f55c9086c701311c4a883b90dcdbc27ea35",
+                    "typeString": "literal_string \"ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)\""
+                  },
+                  "value": "ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_da0ffa0de7087a0ebf6c9cb2a2e66f55c9086c701311c4a883b90dcdbc27ea35",
+                    "typeString": "literal_string \"ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)\""
+                  }
+                ],
+                "id": 947,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 960,
+                "src": "476:9:9",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 949,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "476:112:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 952,
+        "src": "33:558:9"
+      }
+    ],
+    "src": "0:591:9"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/pelleb/code/consensys/eip712VerifiableClaims/contracts/claimTypes/OwnershipProofTypes.sol",
+    "exportedSymbols": {
+      "OwnershipProofTypes": [
+        951
+      ]
+    },
+    "id": 952,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 924,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".3",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:9"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 951,
+        "linearizedBaseContracts": [
+          951
+        ],
+        "name": "OwnershipProofTypes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "OwnershipProofTypes.OwnershipProof",
+            "id": 931,
+            "members": [
+              {
+                "constant": false,
+                "id": 926,
+                "name": "subject",
+                "nodeType": "VariableDeclaration",
+                "scope": 931,
+                "src": "94:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 925,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "94:7:9",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 928,
+                "name": "validFrom",
+                "nodeType": "VariableDeclaration",
+                "scope": 931,
+                "src": "115:17:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 927,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "115:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 930,
+                "name": "validTo",
+                "nodeType": "VariableDeclaration",
+                "scope": 931,
+                "src": "138:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 929,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "138:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "OwnershipProof",
+            "nodeType": "StructDefinition",
+            "scope": 951,
+            "src": "66:92:9",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "OwnershipProofTypes.ContractOwnershipProof",
+            "id": 940,
+            "members": [
+              {
+                "constant": false,
+                "id": 933,
+                "name": "issuer",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "198:14:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 932,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "198:7:9",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 935,
+                "name": "subject",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "218:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 934,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "218:7:9",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 937,
+                "name": "validFrom",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "239:17:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 936,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "239:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 939,
+                "name": "validTo",
+                "nodeType": "VariableDeclaration",
+                "scope": 940,
+                "src": "262:15:9",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 938,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "262:7:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ContractOwnershipProof",
+            "nodeType": "StructDefinition",
+            "scope": 951,
+            "src": "162:120:9",
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 945,
+            "name": "OWNERSHIP_PROOF_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 951,
+            "src": "286:132:9",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 941,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "286:7:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "4f776e65727368697050726f6f662861646472657373207375626a6563742c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29",
+                  "id": 943,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "345:69:9",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_10e4f4a65f0187b01ebfe380fa9a2bfa9362ab11931384d4cc30be3c3ecfda0a",
+                    "typeString": "literal_string \"OwnershipProof(address subject, uint256 validFrom, uint256 validTo)\""
+                  },
+                  "value": "OwnershipProof(address subject, uint256 validFrom, uint256 validTo)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_10e4f4a65f0187b01ebfe380fa9a2bfa9362ab11931384d4cc30be3c3ecfda0a",
+                    "typeString": "literal_string \"OwnershipProof(address subject, uint256 validFrom, uint256 validTo)\""
+                  }
+                ],
+                "id": 942,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 960,
+                "src": "330:9:9",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 944,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "330:88:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 950,
+            "name": "CONTRACT_OWNERSHIP_PROOF_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 951,
+            "src": "423:165:9",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 946,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "423:7:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "436f6e74726163744f776e65727368697050726f6f662861646472657373206973737565722c2061646472657373207375626a6563742c2075696e743235362076616c696446726f6d2c2075696e743235362076616c6964546f29",
+                  "id": 948,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "491:93:9",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_da0ffa0de7087a0ebf6c9cb2a2e66f55c9086c701311c4a883b90dcdbc27ea35",
+                    "typeString": "literal_string \"ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)\""
+                  },
+                  "value": "ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_da0ffa0de7087a0ebf6c9cb2a2e66f55c9086c701311c4a883b90dcdbc27ea35",
+                    "typeString": "literal_string \"ContractOwnershipProof(address issuer, address subject, uint256 validFrom, uint256 validTo)\""
+                  }
+                ],
+                "id": 947,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 960,
+                "src": "476:9:9",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 949,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "476:112:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 952,
+        "src": "33:558:9"
+      }
+    ],
+    "src": "0:591:9"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.3+commit.10d17f24.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-02T16:02:54.733Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
