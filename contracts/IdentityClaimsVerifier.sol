@@ -23,7 +23,7 @@ contract IdentityClaimsVerifier is AbstractClaimsVerifier, IdentityClaimTypes {
         hash(claim)
       )
     );
-    return verifyIssuer(digest, claim.issuer, v, r, s) && valid(claim.validFrom, claim.validTo);
+    return verifyIssuer(digest, claim.issuer, claim.subject, v, r, s) && valid(claim.validFrom, claim.validTo);
   }
 
   function verify(VerifiedResident memory claim, uint8 v, bytes32 r, bytes32 s) public view returns (bool) {
@@ -34,7 +34,7 @@ contract IdentityClaimsVerifier is AbstractClaimsVerifier, IdentityClaimTypes {
         hash(claim)
       )
     );
-    return verifyIssuer(digest, claim.issuer, v, r, s) && valid(claim.validFrom, claim.validTo);
+    return verifyIssuer(digest, claim.issuer, claim.subject, v, r, s) && valid(claim.validFrom, claim.validTo);
   }
 
 }

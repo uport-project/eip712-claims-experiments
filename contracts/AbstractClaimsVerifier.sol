@@ -53,7 +53,7 @@ contract AbstractClaimsVerifier {
     return (validFrom >= block.timestamp) && (block.timestamp < validTo);
   }
 
-  function verifyIssuer(bytes32 digest, address issuer, uint8 v, bytes32 r, bytes32 s) internal view returns (bool) {
-    return !revocations.revoked(issuer, digest) && registry.validDelegate(issuer, "veriKey", ecrecover(digest, v, r, s));
+  function verifyIssuer(bytes32 digest, address issuer, address subject, uint8 v, bytes32 r, bytes32 s) internal view returns (bool) {
+    return !revocations.revoked(issuer, digest) && !revocations.revoked(issuer, subject) &&registry.validDelegate(issuer, "veriKey", ecrecover(digest, v, r, s));
   }  
 }

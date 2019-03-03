@@ -6,7 +6,7 @@ import "./AbstractClaimsVerifier.sol";
 contract ConsortiumAgreements is AbstractClaimsVerifier, DelegateTypes {
 
   struct Offer {
-    VerifiedDelegate issuer;
+    VerifiableDelegate issuer;
     bytes32 terms;
     uint256 amount;
     uint256 price;
@@ -15,7 +15,7 @@ contract ConsortiumAgreements is AbstractClaimsVerifier, DelegateTypes {
   }
 
   struct Acceptance {
-    VerifiedDelegate issuer;
+    VerifiableDelegate issuer;
     bytes32 offer;
     uint256 validFrom;
     uint256 validTo;
@@ -23,14 +23,14 @@ contract ConsortiumAgreements is AbstractClaimsVerifier, DelegateTypes {
 
   bytes32 constant OFFER_TYPEHASH = keccak256(
     abi.encodePacked(
-      "Offer(VerifiedDelegate issuer, bytes32 terms, uint256 amount, uint256 price, uint256 validFrom, uint256 validTo)",
-      VERIFIED_DELEGATE_TYPEHASH)
+      "Offer(VerifiableDelegate issuer, bytes32 terms, uint256 amount, uint256 price, uint256 validFrom, uint256 validTo)",
+      VERIFIABLE_DELEGATE_TYPEHASH)
   );
 
   bytes32 constant ACCEPTANCE_TYPEHASH = keccak256(
     abi.encodePacked(
-      "Acceptance(VerifiedDelegate issuer, bytes32 offer, uint256 validFrom, uint256 validTo)",
-      VERIFIED_DELEGATE_TYPEHASH)
+      "Acceptance(VerifiableDelegate issuer, bytes32 offer, uint256 validFrom, uint256 validTo)",
+      VERIFIABLE_DELEGATE_TYPEHASH)
   );
 
   mapping (address => uint) members;
@@ -66,6 +66,7 @@ contract ConsortiumAgreements is AbstractClaimsVerifier, DelegateTypes {
 
   function makeOffer(Offer memory offer, uint8 v, bytes32 r, bytes32 s) public returns(bool) {
     require(offer.validTo > block.timestamp, "offer should have validity in the future");
+    require(offer.issuer.delegate.allowed_type_hash == OFFER_TYPEHASH, "delegate is not allowed to sign Offers");
     bytes32 digest = verifyAndReturnDigest(offer, v, r, s);
     require(digest != 0x0, "Could not Verify signature of Issuer");
     offers[digest] = offer;
@@ -74,6 +75,7 @@ contract ConsortiumAgreements is AbstractClaimsVerifier, DelegateTypes {
 
   function acceptOffer(Acceptance memory acceptance, uint8 v, bytes32 r, bytes32 s) public returns(bool) {
     require(verify(acceptance, v, r, s), "Could not Verify signature of Issuer");
+    require(acceptance.issuer.delegate.allowed_type_hash == ACCEPTANCE_TYPEHASH, "delegate is not allowed to sign Acceptances");
     Offer memory offer = offers[acceptance.offer];
     require(offer.validTo > 0, "Offer has not been registered");
     require(agreements[acceptance.offer] > 0, "Offer has already been accepted");
@@ -145,7 +147,7 @@ contract ConsortiumAgreements is AbstractClaimsVerifier, DelegateTypes {
     }
   }
 
-  function verify(VerifiedDelegate memory verified) public view returns (bool) {
+  function verify(VerifiableDelegate memory verified) public view returns (bool) {
     Delegate memory claim = verified.delegate;
     bytes32 digest = keccak256(
       abi.encodePacked(
@@ -154,7 +156,7 @@ contract ConsortiumAgreements is AbstractClaimsVerifier, DelegateTypes {
         hash(claim)
       )
     );
-    return verifyIssuer(digest, claim.issuer, verified.v, verified.r, verified.s)
+    return verifyIssuer(digest, claim.issuer, claim.subject, verified.v, verified.r, verified.s)
       && members[claim.issuer] > 0
       && valid(claim.validFrom, claim.validTo);
   }

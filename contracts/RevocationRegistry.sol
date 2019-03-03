@@ -9,7 +9,7 @@ contract RevocationRegistry {
     return true;
   }
 
-  function revoked(address issuer, bytes32 digest) public view returns (bool) {
-    return revocations[digest][issuer] > 0;
+  function revoked(address party, bytes32 digest) public view returns (bool) {
+    return revocations[digest][party] > 0;
   }
 }

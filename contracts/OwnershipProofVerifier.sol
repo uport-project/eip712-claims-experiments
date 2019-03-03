@@ -25,10 +25,10 @@ contract OwnershipProofVerifier is AbstractClaimsVerifier, OwnershipProofTypes {
     );
     require(valid(claim.validFrom, claim.validTo), "invalid issuance timestamps");
     address issuer = ecrecover(digest, v, r, s);
-    require(!revocations.revoked(issuer, digest), "claim was revoked");
+    require(!revocations.revoked(issuer, digest), "claim was revoked by issuer");
+    require(!revocations.revoked(claim.subject, digest), "claim was revoked subject");
     return issuer;
   }
-
 
   function verify(ContractOwnershipProof memory claim, uint8 v, bytes32 r, bytes32 s) public view returns (bool) {
     bytes32 digest = keccak256(
@@ -38,7 +38,7 @@ contract OwnershipProofVerifier is AbstractClaimsVerifier, OwnershipProofTypes {
         hash(claim)
       )
     );
-    return verifyIssuer(digest, claim.issuer, v, r, s) && valid(claim.validFrom, claim.validTo);
+    return verifyIssuer(digest, claim.issuer, claim.subject, v, r, s) && valid(claim.validFrom, claim.validTo);
   }
 
 }
